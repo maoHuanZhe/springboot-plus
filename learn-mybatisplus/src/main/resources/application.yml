@@ -1,0 +1,15 @@
+server:
+  port: 8000
+spring:
+  # DataSource Config
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    url: jdbc:mysql://47.98.228.27:3306/accountbook?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 633664
+
+mybatis-plus:
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射。
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath:/mapper/*.xml
