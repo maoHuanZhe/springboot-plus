@@ -10,6 +10,7 @@
     <modules>
         <module>springboot-start</module>
         <module>learn-mybatisplus</module>
+        <module>learn-swagger</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
