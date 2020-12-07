@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fgrapp.learn.dao.SalesbillMapper">
+    <select id="getPage" resultType="com.fgrapp.learn.entities.Salesbill">
+        select
+        sb.billId,
+        sb.date,
+        sb.grossWeight,
+        sb.tareWeight,
+        sb.price,
+        sb.remack,
+        sb.address
+        from salesbill as sb
+        <where>
+            <if test="ew.customerID != null and ew.customerID != ''">
+                and sb.customerID = #{ew.customerID}
+            </if>
+            <if test="ew.categoryID != null and ew.categoryID != ''">
+                and sb.categoryID = #{ew.categoryID}
+            </if>
+        </where>
+    </select>
+</mapper>

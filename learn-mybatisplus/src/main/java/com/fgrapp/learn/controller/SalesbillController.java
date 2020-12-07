@@ -1,11 +1,13 @@
 package com.fgrapp.learn.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fgrapp.learn.entities.Salesbill;
 import com.fgrapp.learn.service.SalesbillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * SalesbillController
@@ -37,4 +39,10 @@ public class SalesbillController {
     public boolean deleteById(@PathVariable("ids") Long[] ids){
         return service.removeByIds(Arrays.asList(ids));
     }
+
+    @GetMapping("page")
+    public IPage<Salesbill> getPage(@RequestParam Map<String,Object> map){
+        return service.getPage(map);
+    }
+
 }
