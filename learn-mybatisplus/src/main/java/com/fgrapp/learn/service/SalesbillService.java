@@ -7,6 +7,7 @@ import com.fgrapp.learn.entities.Salesbill;
 import com.fgrapp.learn.util.PageUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,6 +18,9 @@ import java.util.Map;
  */
 @Service
 public class SalesbillService extends ServiceImpl<SalesbillMapper, Salesbill> {
+    public void insertBatch(List<Salesbill> list){
+        baseMapper.insertBatch(list);
+    }
     public IPage<Salesbill> getPage(Map<String, Object> map) {
         return baseMapper.getPage(PageUtil.getParamPage(map, Salesbill.class),map);
     }

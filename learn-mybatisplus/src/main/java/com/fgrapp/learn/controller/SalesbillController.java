@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,6 +30,10 @@ public class SalesbillController {
     public Salesbill insert(@RequestBody Salesbill salesbill){
         service.save(salesbill);
         return salesbill;
+    }
+    @PostMapping("batch")
+    public void insertBatch(@RequestBody List<Salesbill> list){
+        service.insertBatch(list);
     }
     @PutMapping
     public Salesbill update(@RequestBody Salesbill salesbill){
