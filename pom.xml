@@ -14,6 +14,11 @@
         <module>learn-cors</module>
         <module>learn-aoplog</module>
         <module>learn-resultAndExceptioin</module>
+        <module>learn-redis</module>
+        <module>learn-captcha</module>
+        <module>learn-monitor</module>
+        <module>learn-sa-token</module>
+        <module>learn-email</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
